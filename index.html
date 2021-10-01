@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>No name</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/monalisa.min.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+		<div class="container">
+			<div class="Row _gutters">
+				<div class="col _col-2">
+					<h6>5 nomes de meninos que você conhece</h6>
+
+					<input type="text" name="menino1" placeholder="Nome 1" v-model="meninos[0]">
+					<input type="text" name="menino2" placeholder="Nome 2" v-model="meninos[1]">
+					<input type="text" name="menino3" placeholder="Nome 3" v-model="meninos[2]">
+					<input type="text" name="menino4" placeholder="Nome 4" v-model="meninos[3]">
+					<input type="text" name="menino5" placeholder="Nome 5" v-model="meninos[4]">
+				</div>
+
+				<div class="col _col-2">
+					<h6>5 nomes de meninas que você conhece</h6>
+
+					<input type="text" name="menina1" placeholder="Nome 1" v-model="meninas[0]">
+					<input type="text" name="menina2" placeholder="Nome 2" v-model="meninas[1]">
+					<input type="text" name="menina3" placeholder="Nome 3" v-model="meninas[2]">
+					<input type="text" name="menina4" placeholder="Nome 4" v-model="meninas[3]">
+					<input type="text" name="menina5" placeholder="Nome 5" v-model="meninas[4]">
+				</div>
+
+				<div class="col _col-2">
+					<h6>5 coisas que se faz com uma laranja (ex: corta, descasca)</h6>
+
+					<input type="text" name="acoes1" placeholder="Ação 1" v-model="acoes[0]">
+					<input type="text" name="acoes2" placeholder="Ação 2" v-model="acoes[1]">
+					<input type="text" name="acoes3" placeholder="Ação 3" v-model="acoes[2]">
+					<input type="text" name="acoes4" placeholder="Ação 4" v-model="acoes[3]">
+					<input type="text" name="acoes5" placeholder="Ação 5" v-model="acoes[4]">
+				</div>
+
+				<div class="col _col-2">
+					<h6>5 partes do corpo (ex: o braço)</h6>
+
+					<input type="text" name="partes1" placeholder="Parte 1" v-model="partes[0]">
+					<input type="text" name="partes2" placeholder="Parte 2" v-model="partes[1]">
+					<input type="text" name="partes3" placeholder="Parte 3" v-model="partes[2]">
+					<input type="text" name="partes4" placeholder="Parte 4" v-model="partes[3]">
+					<input type="text" name="partes5" placeholder="Parte 5" v-model="partes[4]">
+				</div>
+
+				<div class="col _col-2">
+					<h6>5 bebidas</h6>
+
+					<input type="text" name="bebidas1" placeholder="Bebida 1" v-model="bebidas[0]">
+					<input type="text" name="bebidas2" placeholder="Bebida 2" v-model="bebidas[1]">
+					<input type="text" name="bebidas3" placeholder="Bebida 3" v-model="bebidas[2]">
+					<input type="text" name="bebidas4" placeholder="Bebida 4" v-model="bebidas[3]">
+					<input type="text" name="bebidas5" placeholder="Bebida 5" v-model="bebidas[4]">
+				</div>
+
+				<div class="col _col-2">
+					<h6>5 músicos/banda</h6>
+
+					<input type="text" name="bandas1" placeholder="Banda 1" v-model="bandas[0]">
+					<input type="text" name="bandas2" placeholder="Banda 2" v-model="bandas[1]">
+					<input type="text" name="bandas3" placeholder="Banda 3" v-model="bandas[2]">
+					<input type="text" name="bandas4" placeholder="Banda 4" v-model="bandas[3]">
+					<input type="text" name="bandas5" placeholder="Banda 5" v-model="bandas[4]">
+				</div>
+			</div>
+
+			<a href="#" class="Button" @click="gerar">Gerar</a>
+
+			<ul class="_unstyled">
+				<li>{{ frases1 }}</li>
+				<li>{{ frases2 }}</li>
+				<li>{{ frases3 }}</li>
+				<li>{{ frases4 }}</li>
+				<li>{{ frases5 }}</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
