@@ -1,4 +1,24 @@
+/**
+* COLORS
+*
+* NORMAL #8C0BD6
+* NORMAL 2 #6A08A3
+* DARK #380457
+* DARK 2 #3E1257
+* LIGHT #C67FF0
+*
+*/
+
 [v-cloak] { display: none }
+
+body {
+	height: 100vh;
+	background-color: #1e1e1e;
+}
+
+#app {
+	height: 100%;
+}
 
 a {
 	text-decoration: none;
@@ -8,4 +28,155 @@ a {
 	position: relative;
 	margin: 0 auto;
 	width: 1170px;
+}
+
+body, p, input, a, span,
+h1, h2, h3, h4, h5, h6, 
+button {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+	color: #fff;
+}
+
+.step {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+}
+
+.step h3 {
+	text-align: center;
+}
+
+.step .auto {
+	display: block;
+	margin: 0 0 5px;
+	color: #fff;
+	font-size: 12px;
+	text-align: right;
+	cursor: pointer;
+}
+
+.step ul {
+	margin: 0;
+}
+
+.step ul li {
+	margin: 0 0 15px;
+	padding: 10px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	border: 2px solid #631bd6;
+	text-align: center;
+}
+
+.step._result {
+	width: 700px;	
+}
+
+
+input[type=text] {
+	margin: 0 0 10px;
+	height: 40px;
+	color: #fff;
+	background-color: transparent;
+	font-size: 16px;
+	border: 2px solid #6A08A3;
+	border-radius: 0;
+}
+
+input[type=text]:focus {
+	border-color: #631CD6;
+}
+
+input::placeholder {
+	color: #fff;
+}
+
+.Button {
+	margin: 40px 0 0;
+	padding: 0 30px;
+	background-color: #631CD6;
+	border-radius: 0;
+	text-transform: uppercase;
+}
+
+.Button:hover {
+	background-color: #6A08A3;
+}
+
+.Button:disabled:hover {
+	background-color: #631CD6;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 30px;
+	height: 30px;
+	background-color: #631CD6;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.info:hover {
+	color: #fff;
+	background-color: #6A08A3;
+}
+
+.Popup {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.Popup .content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	width: 400px;
+	background-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+	.step {
+		position: relative;
+		top: 0;
+		left: 0;
+		transform: none;
+		margin: 0 auto;
+		padding: 60px 0;
+		width: 90%;
+	}
+
+	.step._result {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	h3, ._h3 {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	.Popup .content {
+		width: 90%;
+	}
 }

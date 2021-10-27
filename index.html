@@ -1,81 +1,108 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>No name</title>
+	<meta name="viewport" 		  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>Nonsense game</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/monalisa.min.css">
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 	<div id="app" v-cloak>
-		<div class="container">
-			<div class="Row _gutters">
-				<div class="col _col-2">
-					<h6>5 nomes de meninos que você conhece</h6>
+		<div class="step" v-show="step == 1">
+			<h3>5 names of boys you know</h3>
 
-					<input type="text" name="menino1" placeholder="Nome 1" v-model="meninos[0]">
-					<input type="text" name="menino2" placeholder="Nome 2" v-model="meninos[1]">
-					<input type="text" name="menino3" placeholder="Nome 3" v-model="meninos[2]">
-					<input type="text" name="menino4" placeholder="Nome 4" v-model="meninos[3]">
-					<input type="text" name="menino5" placeholder="Nome 5" v-model="meninos[4]">
-				</div>
+			<input type="text" name="menino1" placeholder="Name 1" v-model="meninos[0]">
+			<input type="text" name="menino2" placeholder="Name 2" v-model="meninos[1]">
+			<input type="text" name="menino3" placeholder="Name 3" v-model="meninos[2]">
+			<input type="text" name="menino4" placeholder="Name 4" v-model="meninos[3]">
+			<input type="text" name="menino5" placeholder="Name 5" v-model="meninos[4]">
 
-				<div class="col _col-2">
-					<h6>5 nomes de meninas que você conhece</h6>
-
-					<input type="text" name="menina1" placeholder="Nome 1" v-model="meninas[0]">
-					<input type="text" name="menina2" placeholder="Nome 2" v-model="meninas[1]">
-					<input type="text" name="menina3" placeholder="Nome 3" v-model="meninas[2]">
-					<input type="text" name="menina4" placeholder="Nome 4" v-model="meninas[3]">
-					<input type="text" name="menina5" placeholder="Nome 5" v-model="meninas[4]">
-				</div>
-
-				<div class="col _col-2">
-					<h6>5 coisas que se faz com uma laranja (ex: corta, descasca)</h6>
-
-					<input type="text" name="acoes1" placeholder="Ação 1" v-model="acoes[0]">
-					<input type="text" name="acoes2" placeholder="Ação 2" v-model="acoes[1]">
-					<input type="text" name="acoes3" placeholder="Ação 3" v-model="acoes[2]">
-					<input type="text" name="acoes4" placeholder="Ação 4" v-model="acoes[3]">
-					<input type="text" name="acoes5" placeholder="Ação 5" v-model="acoes[4]">
-				</div>
-
-				<div class="col _col-2">
-					<h6>5 partes do corpo (ex: o braço)</h6>
-
-					<input type="text" name="partes1" placeholder="Parte 1" v-model="partes[0]">
-					<input type="text" name="partes2" placeholder="Parte 2" v-model="partes[1]">
-					<input type="text" name="partes3" placeholder="Parte 3" v-model="partes[2]">
-					<input type="text" name="partes4" placeholder="Parte 4" v-model="partes[3]">
-					<input type="text" name="partes5" placeholder="Parte 5" v-model="partes[4]">
-				</div>
-
-				<div class="col _col-2">
-					<h6>5 bebidas</h6>
-
-					<input type="text" name="bebidas1" placeholder="Bebida 1" v-model="bebidas[0]">
-					<input type="text" name="bebidas2" placeholder="Bebida 2" v-model="bebidas[1]">
-					<input type="text" name="bebidas3" placeholder="Bebida 3" v-model="bebidas[2]">
-					<input type="text" name="bebidas4" placeholder="Bebida 4" v-model="bebidas[3]">
-					<input type="text" name="bebidas5" placeholder="Bebida 5" v-model="bebidas[4]">
-				</div>
-
-				<div class="col _col-2">
-					<h6>5 músicos/banda</h6>
-
-					<input type="text" name="bandas1" placeholder="Banda 1" v-model="bandas[0]">
-					<input type="text" name="bandas2" placeholder="Banda 2" v-model="bandas[1]">
-					<input type="text" name="bandas3" placeholder="Banda 3" v-model="bandas[2]">
-					<input type="text" name="bandas4" placeholder="Banda 4" v-model="bandas[3]">
-					<input type="text" name="bandas5" placeholder="Banda 5" v-model="bandas[4]">
-				</div>
+			<div class="_tac">
+				<button class="Button" :disabled="!checkStep1()" @click="step = 2">Next</button>
 			</div>
+		</div>
 
-			<a href="#" class="Button" @click="gerar">Gerar</a>
+		<div class="step" v-show="step == 2">
+			<h3>5 names of girls you know</h3>
+
+			<input type="text" name="menina1" placeholder="Name 1" v-model="meninas[0]">
+			<input type="text" name="menina2" placeholder="Name 2" v-model="meninas[1]">
+			<input type="text" name="menina3" placeholder="Name 3" v-model="meninas[2]">
+			<input type="text" name="menina4" placeholder="Name 4" v-model="meninas[3]">
+			<input type="text" name="menina5" placeholder="Name 5" v-model="meninas[4]">
+
+			<div class="_tac">
+				<button class="Button" :disabled="!checkStep2()" @click="step = 3">Next</button>
+			</div>
+		</div>
+
+		<div class="step" v-show="step == 3">
+			<h3>5 things you do with an orange</h3>
+			<span class="auto" @click="fillAcoes">Auto fill</span>
+
+			<input type="text" name="acoes1" placeholder="Thing 1" v-model="acoes[0]">
+			<input type="text" name="acoes2" placeholder="Thing 2" v-model="acoes[1]">
+			<input type="text" name="acoes3" placeholder="Thing 3" v-model="acoes[2]">
+			<input type="text" name="acoes4" placeholder="Thing 4" v-model="acoes[3]">
+			<input type="text" name="acoes5" placeholder="Thing 5" v-model="acoes[4]">
+
+			<div class="_tac">
+				<button class="Button" :disabled="!checkStep3()" @click="step = 4">Next</button>
+			</div>
+		</div>
+
+		<div class="step" v-show="step == 4">
+			<h3>5 parts of a cow's body</h3>
+			<span class="auto" @click="fillPartes">Auto fill</span>
+
+			<input type="text" name="partes1" placeholder="Part 1" v-model="partes[0]">
+			<input type="text" name="partes2" placeholder="Part 2" v-model="partes[1]">
+			<input type="text" name="partes3" placeholder="Part 3" v-model="partes[2]">
+			<input type="text" name="partes4" placeholder="Part 4" v-model="partes[3]">
+			<input type="text" name="partes5" placeholder="Part 5" v-model="partes[4]">
+
+			<div class="_tac">
+				<button class="Button" :disabled="!checkStep4()" @click="step = 5">Next</button>
+			</div>
+		</div>
+
+		<div class="step" v-show="step == 5">
+			<h3>5 drinks</h3>
+			<span class="auto" @click="fillBebidas">Auto fill</span>
+
+			<input type="text" name="bebidas1" placeholder="Drink 1" v-model="bebidas[0]">
+			<input type="text" name="bebidas2" placeholder="Drink 2" v-model="bebidas[1]">
+			<input type="text" name="bebidas3" placeholder="Drink 3" v-model="bebidas[2]">
+			<input type="text" name="bebidas4" placeholder="Drink 4" v-model="bebidas[3]">
+			<input type="text" name="bebidas5" placeholder="Drink 5" v-model="bebidas[4]">
+
+			<div class="_tac">
+				<button class="Button" :disabled="!checkStep5()" @click="step = 6">Next</button>
+			</div>
+		</div>
+
+		<div class="step" v-show="step == 6">
+			<h3>5 musicians/band</h3>
+			<span class="auto" @click="fillBandas">Auto fill</span>
+
+			<input type="text" name="bandas1" placeholder="Band 1" v-model="bandas[0]">
+			<input type="text" name="bandas2" placeholder="Band 2" v-model="bandas[1]">
+			<input type="text" name="bandas3" placeholder="Band 3" v-model="bandas[2]">
+			<input type="text" name="bandas4" placeholder="Band 4" v-model="bandas[3]">
+			<input type="text" name="bandas5" placeholder="Band 5" v-model="bandas[4]">
+
+			<div class="_tac">
+				<button class="Button" @click="gerar" :disabled="!checkLast()">Generate</button>
+			</div>
+		</div>
+
+		<div class="step _result" v-show="step == 7">
+			<h3>The result is</h3>
 
 			<ul class="_unstyled">
 				<li>{{ frases1 }}</li>
@@ -84,9 +111,17 @@
 				<li>{{ frases4 }}</li>
 				<li>{{ frases5 }}</li>
 			</ul>
+
+			<div class="_tac">
+				<button class="Button" @click="reset">Play again</button>
+			</div>
 		</div>
+
+		<a href="#" class="info" @click="popup = true">?</a>
+		<div class="Popup" @click="popup = false" v-show="popup"><div class="content">I used to play this game back in high school. I really have no idea if it has a name. Enjoy!</div></div>
 	</div>
 
+	<script src="js/data.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	<script src="js/app.js"></script>
